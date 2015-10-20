@@ -1,0 +1,30 @@
+{% extends "master_page.html" %}
+
+{% block title %}
+Upsate Info
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+{% include 'user_profile_navbar.html' %}
+
+<div class="container">
+    <div class="col-md-12" style="padding:10px">
+        {% include 'username.html' %}
+    </div>
+
+    <h1>Update your information<br><br></h1>
+    <span style="color:red">{{ error }}</span>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form_user_personal_information.as_p }}
+                <input type="submit" value="Update" class="btn btn-primary">
+                <a href="/user_profile">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
