@@ -69,7 +69,7 @@ WSGI_APPLICATION = 'sam2017.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '/db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -93,7 +93,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'SAM2017/static_in_env',
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env',
                            'static_root')
 
 STATICFILES_DIRS = (

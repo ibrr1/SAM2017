@@ -11,6 +11,7 @@ class User(models.Model):
 
     class Meta:
         app_label = 'sam2017'
+        abstract = True
 
     def __str__(self):
         return self.email
@@ -25,4 +26,7 @@ class PCC(Author):
 
 
 class PCM(User):
+    pass
+
+class Admin(User):
     pass
