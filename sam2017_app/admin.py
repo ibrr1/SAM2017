@@ -1,4 +1,4 @@
 from django.contrib import admin
-from models import User
+from sam2017_app.models import User
 
 admin.site.register(User)

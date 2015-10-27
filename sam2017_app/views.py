@@ -1,9 +1,9 @@
 import datetime
-from . import forms, models
+
+from sam2017_app import models, forms
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-
 
 
 def user_registration(request):
