@@ -1,5 +1,7 @@
 __author__ = 'chris'
 
+from user import User
+
 #   Easily Breaks up the models into a models package. If you are to add a model, make sure
 #   You do the following:
 #   Create the model, and define the Meta Class(within the new class) with app_label = 'sam2017'
@@ -14,4 +16,4 @@ __author__ = 'chris'
 #   Make sure User is imported first.
 #   Add the name of the class in the __all__ variable
 
-__all__ = []
+__all__ = ['User']
