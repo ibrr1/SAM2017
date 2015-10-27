@@ -3,7 +3,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -93,12 +92,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env',
-                           'static_root')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static_in_pro', 'our_static'),
-)
+STATICFILES_DIRS = [
+    os.path.join(os.path.dirname(BASE_DIR), 'SAM2017/static')
+]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
