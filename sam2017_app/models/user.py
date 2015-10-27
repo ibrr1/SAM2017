@@ -14,3 +14,15 @@ class User(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Author(User):
+    pass
+
+
+class PCC(Author):
+    pass
+
+
+class PCM(User):
+    pass
