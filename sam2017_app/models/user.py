@@ -10,7 +10,7 @@ class User(models.Model):
     admin = models.BooleanField(default=False)
 
     class Meta:
-        app_label = 'sam2017'
+        app_label = 'sam2017_app'
         abstract = True
 
     def __str__(self):
@@ -18,15 +18,24 @@ class User(models.Model):
 
 
 class Author(User):
-    pass
+
+    class Meta:
+        app_label = 'sam2017_app'
 
 
 class PCC(Author):
-    pass
+
+    class Meta:
+        app_label = 'sam2017_app'
 
 
 class PCM(User):
-    pass
+
+    class Meta:
+        app_label = 'sam2017_app'
+
 
 class Admin(User):
-    pass
+
+    class Meta:
+        app_label = 'sam2017_app'

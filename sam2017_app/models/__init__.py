@@ -12,8 +12,8 @@ from sam2017_app.models.user import User, Author, PCC, PCM, Admin
 #           class Meta:
 #               app_label = 'sam2017'
 #
-#   In this file import the file (make certain you order the imports correctly. If Tool has User as a ForeignKey,
+#   In this file import the file (make certain you order the imports correctly. If ___ has User as a ForeignKey,
 #   Make sure User is imported first.
 #   Add the name of the class in the __all__ variable
 
-__al__ = ['User', 'Author', 'PCC', 'PCM', 'Admin']
+__all__ = ['User', 'Author', 'PCC', 'PCM', 'Admin']
