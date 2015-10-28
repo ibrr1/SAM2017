@@ -1,6 +1,6 @@
 __author__ = 'chris'
 
-from sam2017_app.models.user import User, Author, PCC, PCM, Admin
+from sam2017_app.models.user import User
 
 #   Easily Breaks up the models into a models package. If you are to add a model, make sure
 #   You do the following:
@@ -16,4 +16,4 @@ from sam2017_app.models.user import User, Author, PCC, PCM, Admin
 #   Make sure User is imported first.
 #   Add the name of the class in the __all__ variable
 
-__all__ = ['User', 'Author', 'PCC', 'PCM', 'Admin']
+__all__ = ['User']
