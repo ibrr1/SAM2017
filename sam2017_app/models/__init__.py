@@ -1,4 +1,4 @@
-from sam2017_app.models.user import User
+from sam2017_app.models.user_model import User
 from sam2017_app.models.paper import Paper, Report, Review
 from sam2017_app.models.notification import Notification, Reminder
 

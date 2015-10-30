@@ -6,15 +6,15 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', 'sam2017_app.views.user_login', name='login'),
+    url(r'^$', 'sam2017_app.views.login.user_login', name='login'),
 
-    url(r'^registration/$', 'sam2017_app.views.user_registration', name='registration'),
+    url(r'^registration/$', 'sam2017_app.views.registration.user_registration', name='registration'),
 
-    url(r'^user_profile/$', 'sam2017_app.views.user_profile', name='profile'),
+    url(r'^user_profile/$', 'sam2017_app.views.user_profile.user_profile', name='profile'),
 
-    url(r'^user_profile/logout/$', 'sam2017_app.views.logout', name='logout'),
+    url(r'^user_profile/logout/$', 'sam2017_app.views.logout.logout', name='logout'),
 
-    url(r'^user_profile/user_information/$', 'sam2017_app.views.manage_account', name='modify_user_info'),
+    url(r'^user_profile/user_information/$', 'sam2017_app.views.update_user_info.manage_account', name='modify_user_info'),
 
 ]
 
