@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from sam2017_app.views.session import __is_session_open
 from sam2017_app.views.user_details import __add_general_content_to_context
+import datetime
 from django.contrib import messages
 
 
@@ -39,7 +40,10 @@ def paper_submission(request):
                 submitted_paper.paper_format = paper_submission_form.cleaned_data['paper_format']
                 submitted_paper.revision_paper = paper_submission_form.cleaned_data['is_this_a_revision_of_a_previously_submitted_paper']
                 submitted_paper.submitter = user
+                submitted_paper.is_new_paper = True
+                submitted_paper.date_created = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 submitted_paper.save()
+                messages.success(request, 'Thanks, You have successfully submitted a paper')
 
                 return HttpResponseRedirect('/user_profile')
 

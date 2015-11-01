@@ -1,6 +1,5 @@
 from django import forms
 
-# form found in the login page
 class PaperSubmission(forms.Form):
     paper = forms.FileField()
     title = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -14,9 +13,3 @@ class PaperSubmission(forms.Form):
     )
 
     is_this_a_revision_of_a_previously_submitted_paper = forms.ChoiceField(choices= REVISION_PAPER , widget=forms.Select(attrs={'class': 'form-control'}))
-
-
-
-
-
-# end UserLogger

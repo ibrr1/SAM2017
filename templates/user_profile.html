@@ -15,6 +15,9 @@ User Profile
 
         <div class="alert alert-{{msg.level_tag}}" role="alert">
             {{msg.message}}
+            {% if user_type == 'PCC' %}
+            {{ submitted_date }}
+            {% endif %}
            <a data-dismiss="alert" aria-hidden="true" class="close glyphicon glyphicon-remove"></a>
 
         </div>

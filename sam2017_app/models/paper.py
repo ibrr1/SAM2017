@@ -1,6 +1,6 @@
 from django.db import models
 from sam2017_app.models import user_model
-from django.utils import timezone
+import datetime
 
 
 class Paper(models.Model):
@@ -12,7 +12,8 @@ class Paper(models.Model):
     paper_format = models.CharField(max_length=30, blank=False)
     submitter = models.ForeignKey(user_model.User)
     revision_paper = models.CharField(max_length=30)
-    date_created = models.DateTimeField(default=timezone.now)
+    is_new_paper = models.BooleanField(default= False)
+    date_created = models.DateTimeField(default = datetime.datetime.now())
 
     class Meta:
         app_label = 'sam2017_app'
