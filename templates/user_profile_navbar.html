@@ -11,10 +11,21 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                {% if user_type == 'Author' %}
                 <li><a href="/user_profile/user_information">Manage Account</a></li>
                 <li><a href="/user_profile/paper_submission/">Paper Submission</a></li>
                 <li><a href="/user_profile/paper_list/">Paper List</a></li>
                 <li><a href="/user_profile/logout">Logout</a></li>
+                {% elif user_type == 'PCC' %}
+                <li><a href="/user_profile/user_information">Manage Account</a></li>
+                <li><a href="/user_profile/paper_list/">Paper List</a></li>
+                <li><a href="/user_profile/logout">Logout</a></li>
+                {% elif user_type == 'PCM' %}
+                <li><a href="/user_profile/user_information">Manage Account</a></li>
+                <li><a href="/user_profile/paper_list/">Paper List</a></li>
+                <li><a href="/user_profile/logout">Logout</a></li>
+                {% endif %}
+
             </ul>
         </div>
     </div>

@@ -14,6 +14,7 @@ def user_profile(request):
     user = models.User.objects.get(email=request.session['user_email'])
 
     context = {
+        'user_type' : user.type
     }
 
     context.update(__add_general_content_to_context(user))
