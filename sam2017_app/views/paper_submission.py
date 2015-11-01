@@ -37,6 +37,7 @@ def paper_submission(request):
                 submitted_paper.authors_list = paper_submission_form.cleaned_data['authors_list']
                 submitted_paper.author_contact = paper_submission_form.cleaned_data['author_contact']
                 submitted_paper.paper_format = paper_submission_form.cleaned_data['paper_format']
+                submitted_paper.revision_paper = paper_submission_form.cleaned_data['is_this_a_revision_of_a_previously_submitted_paper']
                 submitted_paper.submitter = user
                 submitted_paper.save()
 

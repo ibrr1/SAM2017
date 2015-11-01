@@ -11,6 +11,7 @@ class Paper(models.Model):
     author_contact = models.CharField(max_length=30, blank=False)
     paper_format = models.CharField(max_length=30, blank=False)
     submitter = models.ForeignKey(user_model.User)
+    revision_paper = models.CharField(max_length=30)
     date_created = models.DateTimeField(default=timezone.now)
 
     class Meta:

@@ -21,12 +21,14 @@ Tools
                 <td><b>Paper</b></td>
                 <td><b>Title</b></td>
                 <td><b>Authors</b></td>
+                <td><b>Revision Paper</b></td>
                 <td><b>Format</b></td>
                 <td><b>Submitter</b></td>
                 {% elif user_type == 'pcc' %}
                 <td><b>Paper</b></td>
                 <td><b>Title</b></td>
                 <td><b>Authors</b></td>
+                <td><b>Revision Paper</b></td>
                 <td><b>Format</b></td>
                 <td><b>Submitter</b></td>
                 <td><b>Action</b></td>
@@ -44,6 +46,7 @@ Tools
                 <td><a href="/papers/2015/10/sam.pdf"> {{ instance.paper }}</a> </td>
                 <td>{{ instance.title }}</td>
                 <td>{{ instance.authors_list }}</td>
+                <td>{{ instance.revision_paper }}</td>
                 <td>{{ instance.paper_format }}</td>
                 <td>{{ instance.submitter }}</td>
 
@@ -51,6 +54,7 @@ Tools
                 <td><a href="/papers/2015/10/sam.pdf"> {{ instance.paper }}</a> </td>
                 <td>{{ instance.title }}</td>
                 <td>{{ instance.authors_list }}</td>
+                <td>{{ instance.revision_paper }}</td>
                 <td>{{ instance.paper_format }}</td>
                 <td>{{ instance.submitter }}</td>
                 <td><button class="btn btn-primary btn-sm btn-block">Assign</button> <br></td>
