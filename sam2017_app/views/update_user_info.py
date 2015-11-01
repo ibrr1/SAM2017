@@ -6,6 +6,8 @@ from sam2017_app.views.session import __is_session_open
 from sam2017_app.views.user_details import __add_general_content_to_context
 from django.contrib import messages
 
+from sam2017_app.models import paper
+
 
 # User Manage Account
 def manage_account(request):
@@ -13,6 +15,8 @@ def manage_account(request):
         return HttpResponseRedirect('/')
 
     user = user_model.User.objects.get(email=request.session['user_email'])
+
+    papers = paper.Paper.objects.all();
 
 
     # put all the initial for fields in this dict

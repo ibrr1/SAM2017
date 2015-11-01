@@ -15,6 +15,9 @@ urlpatterns = [
     url(r'^user_profile/logout/$', 'sam2017_app.views.logout.logout', name='logout'),
 
     url(r'^user_profile/user_information/$', 'sam2017_app.views.update_user_info.manage_account', name='modify_user_info'),
+    url(r'^user_profile/paper_submission/$', 'sam2017_app.views.paper_submission.paper_submission', name='modify_user_info'),
+    url(r'^user_profile/paper_list/$', 'sam2017_app.views.paper_list.paper_list', name='modify_user_info'),
+    url(r'^/papers/2015/10/sam.pdf$', 'sam2017_app.views.paper_list.paper_list', name='modify_user_info'),
 
 ]
 

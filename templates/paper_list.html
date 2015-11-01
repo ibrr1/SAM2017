@@ -1,0 +1,78 @@
+{% extends "master_page.html" %}
+
+{% block title %}
+Tools
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+{% include 'user_profile_navbar.html' %}
+
+
+<div class="container">
+    <div class="row" style="padding:10px">
+        {% include 'username.html' %}
+        <span style="color:red;">{{ error }}</span>
+
+
+        <table class="table table-striped">
+            <tr class="info">
+                {% if user_type == 'author' %}
+                <td><b>Paper</b></td>
+                <td><b>Title</b></td>
+                <td><b>Authors</b></td>
+                <td><b>Format</b></td>
+                <td><b>Submitter</b></td>
+                {% elif user_type == 'pcc' %}
+                <td><b>Paper</b></td>
+                <td><b>Title</b></td>
+                <td><b>Authors</b></td>
+                <td><b>Format</b></td>
+                <td><b>Submitter</b></td>
+                <td><b>Action</b></td>
+                {% else %}
+                <td><b>Title</b></td>
+                <td><b>Authors</b></td>
+                <td><b>Action</b></td>
+                {% endif %}
+
+            </tr>
+            {% if papers_queryset %}
+            {% for instance in papers_queryset %}
+            <tr>
+                {% if user_type == 'author' %}
+                <td><a href="/papers/2015/10/sam.pdf"> {{ instance.paper }}</a> </td>
+                <td>{{ instance.title }}</td>
+                <td>{{ instance.authors_list }}</td>
+                <td>{{ instance.paper_format }}</td>
+                <td>{{ instance.submitter }}</td>
+
+                {% elif user_type == 'pcc' %}
+                <td><a href="/papers/2015/10/sam.pdf"> {{ instance.paper }}</a> </td>
+                <td>{{ instance.title }}</td>
+                <td>{{ instance.authors_list }}</td>
+                <td>{{ instance.paper_format }}</td>
+                <td>{{ instance.submitter }}</td>
+                <td><button class="btn btn-primary btn-sm btn-block">Assign</button> <br></td>
+
+                {% else %}
+                <td>{{ instance.title }}</td>
+                <td>{{ instance.authors_list }}</td>
+                <td><button class="btn btn-primary btn-sm btn-block">Choose</button> <br></td>
+                {% endif %}
+
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <tr>
+            <td>
+                <h4>No paper to list...</h4>
+            </td>
+        </tr>
+        {% endif %}
+
+
+    </div>
+</div>
+{% endblock %}
