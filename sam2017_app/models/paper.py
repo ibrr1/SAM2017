@@ -5,7 +5,7 @@ import datetime
 
 class Paper(models.Model):
 
-    paper = models.FileField(upload_to='papers/%Y/%m')
+    paper = models.FileField(upload_to='submitted_paper')
     title =  models.CharField(max_length=30, blank=False)
     authors_list = models.CharField(max_length=30, blank=False)
     author_contact = models.CharField(max_length=30, blank=False)

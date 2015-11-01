@@ -43,7 +43,7 @@ Tools
             {% for instance in papers_queryset %}
             <tr>
                 {% if user_type == 'Author' %}
-                <td><a href="/papers/2015/10/sam.pdf"> {{ instance.paper }}</a> </td>
+                <td><a href="/user_profile/paper_list/download/{{ instance.paper }}"> {{ instance.paper }}</a> </td>
                 <td>{{ instance.title }}</td>
                 <td>{{ instance.authors_list }}</td>
                 <td>{{ instance.revision_paper }}</td>

@@ -31,6 +31,14 @@ def paper_submission(request):
                 error = 'sorry!! you can only submit a PDF or Word document'
                 context['error'] = error
             else:
+                df = datetime.datetime.now()
+                #file name is user last name + date + current time
+                filename = user.last_name + '_' + str(df.month)+"_"+ str(df.day)+"_"+ str(df.year)+ "_" +str(df.hour)+ "_"+ str(df.minute) +"_" +str(df.second) +"_"+ filename
+
+                #save the file in a folder name submitted_papers in the project main folder
+                file_name='submitted_papers/'+ filename
+                handle_uploaded_file(request.FILES['paper'],file_name)
+                #----
 
                 submitted_paper = paper.Paper()
                 submitted_paper.paper = filename
@@ -50,3 +58,8 @@ def paper_submission(request):
     return render(request, 'paper_submission.html', context)
 
 # End paper submission
+
+def handle_uploaded_file(f, file_name):
+    with open( file_name , 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
