@@ -13,7 +13,7 @@ def paper_list(request):
 
     user = User.objects.get(email=request.session['user_email'])
 
-    if user.type == 'author':
+    if user.type == 'Author':
         papers = paper.Paper.objects.all().filter(submitter_id__exact=user.id).order_by('-date_created');
     else:
         papers = paper.Paper.objects.all().order_by('-date_created');
