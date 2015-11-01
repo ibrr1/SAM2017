@@ -5,10 +5,8 @@ import datetime
 def __add_general_content_to_context(user):
     context = {
         'user_first_name': user.first_name,
+        'user_type': user.type,
         'date': datetime.date.today(),
     }
-
-    if user.admin == True:
-        context['user_first_name'] += ' ( admin )'
 
     return context

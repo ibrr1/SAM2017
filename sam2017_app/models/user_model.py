@@ -4,12 +4,12 @@ from django.db import models
 # This is a user class
 class User(models.Model):
 
-    AUTHOR = "author"
-    PCM = "pcm"
-    PCC = "pcc"
+    AUTHOR = "Author"
+    PCM = "PCM"
+    PCC = "PCC"
     ADMIN = "admin"
 
-    USER_TYPE = ((AUTHOR, "Author"), (PCM, "PCM"), (PCC, "pcc"), (ADMIN, "Admin"))
+    USER_TYPE = ((AUTHOR, "Author"), (PCM, "PCM"), (PCC, "PCC"), (ADMIN, "Admin"))
 
     first_name = models.CharField(max_length=30, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
