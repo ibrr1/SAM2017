@@ -21,7 +21,8 @@ def paper_list(request):
 
     context = {
         'papers_queryset': papers,
-        'user_type': user.type
+        'user_type': user.type,
+        'paper_list_page': True
     }
 
     context.update(__add_general_content_to_context(user))

@@ -1,7 +1,7 @@
 {% extends "master_page.html" %}
 
 {% block title %}
-Upsate Info
+Register
 {{ block.super }}
 {% endblock %}
 
@@ -9,22 +9,32 @@ Upsate Info
 {% include 'user_profile_navbar.html' %}
 
 <div class="container">
-    <div class="col-md-12" style="padding:10px">
-        {% include 'username.html' %}
-    </div>
-
-    <h1>Update your information<br><br></h1>
+    <br>
     <span style="color:red">{{ error }}</span>
 
     <div class="row">
-        <div class="col-sm-6">
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{ form_user_personal_information.as_p }}
-                <input type="submit" value="Update" class="btn btn-primary">
-                <a href="/user_profile">Cancel</a>
-            </form>
+        <div class="center-block" style="width:500px;">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Update your information</h4></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="form-signin" action="" method="POST">
+                                {% csrf_token %}
+                                {{ form_user_personal_information.as_p }}
+                                <button type="submit" class="btn  btn-primary btn-block"><span class="glyphicon glyphicon-check"></span> Update </button> <br>
+                                <a href="/user_profile">Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+
     </div>
 </div>
+
+
 {% endblock %}

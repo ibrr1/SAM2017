@@ -19,6 +19,7 @@ def paper_submission(request):
 
     context = {
         'paper_submission_form': paper_submission_form,
+        'paper_submission_page': True
     }
 
     context.update(__add_general_content_to_context(user))

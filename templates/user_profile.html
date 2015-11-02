@@ -13,21 +13,21 @@ User Profile
 <b class="messages">
     {% for msg in messages %}
 
-        <div class="alert alert-{{msg.level_tag}}" role="alert">
-            {{msg.message}}
-            {% if user_type == 'PCC' %}
-            {{ submitted_date }}
-            {% endif %}
-           <a data-dismiss="alert" aria-hidden="true" class="close glyphicon glyphicon-remove"></a>
+    <div class="alert alert-{{msg.level_tag}}" role="alert">
+        {{msg.message}}
+        {% if user_type == 'PCC' %}
+        {{ submitted_date }}
+        {% endif %}
+        <a data-dismiss="alert" aria-hidden="true" class="close glyphicon glyphicon-remove"></a>
 
-        </div>
+    </div>
 
     {% endfor %}
 </b>
 {% endif %}
 
 <div class="container">
-    {% include 'username.html' %}
+
 
 </div>
 

@@ -24,6 +24,7 @@ def manage_account(request):
                          'last_name': user.last_name,
                          'password': user.password,
                          'password_verification': user.password,
+                         'manage_account_page' : True
                          }
 
     if request.method == 'GET':

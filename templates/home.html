@@ -6,20 +6,32 @@ Welcome
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>Welcome to SAM2017<br><br><small>Login</small></h1>
-            </div>
-        </div>
-    <span style="color:red;">{{ error }}</span>
+{% include 'user_profile_navbar.html' %}
+
+<div class="container">
+    <h2 class="text-primary text-center">SAM2017</h2><br>
+
     <div class="row">
-        <div class="col-sm-4">
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{ login_form.as_p }}
-                <input type="submit" value="Log In" class="btn btn-primary" >
-                <a href="registration">Register as a new user</a>
-            </form>
+        <div class="center-block" style="width:500px;">
+            <div class="panel panel-default ">
+                <div class="panel-heading"><h4>Log In</h4></div>
+                <div class="panel-body">
+                    <span style="color:red;">{{ error }}</span>
+                    <form class="form-signin" action="" method="POST">
+                        {% csrf_token %}
+                        {{ login_form.as_p }}
+                        <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-check"></span> Log In </button>
+                        <br>
+                        <a href="/registration">Don't have an account? Sign up </a>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
         </div>
+    </div>
+</div>
 {% endblock %}

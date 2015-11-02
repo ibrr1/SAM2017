@@ -1,7 +1,7 @@
 {% extends "master_page.html" %}
 
 {% block title %}
-paper
+Register
 {{ block.super }}
 {% endblock %}
 
@@ -9,21 +9,37 @@ paper
 {% include 'user_profile_navbar.html' %}
 
 <div class="container">
-    <div class="col-md-12" style="padding:10px">
-        {% include 'username.html' %}
-    </div>
-    <h1>submit a paper </h1>
+    <br>
     <span style="color:red">{{ error }}</span>
 
     <div class="row">
-        <div class="col-sm-6">
-            <form enctype="multipart/form-data" action="" method="POST">
-                {% csrf_token %}
-                {{ paper_submission_form.as_p }}
-                <input type="submit" value="Submit" class="btn btn-primary">
-                <a href="/user_profile">Cancel</a>
-            </form>
+        <div class="center-block" style="width:500px;">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Submit Paper</h4></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                {{ paper_submission_form.as_p }}
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="btn  btn-primary"><span class="glyphicon glyphicon-check"></span> Submit</button>
+
+                    <a href="/user_profile">Cancel</a>
+                            </form>
+
+                </div>
+
+            </div>
         </div>
+
+
     </div>
 </div>
+
 {% endblock %}

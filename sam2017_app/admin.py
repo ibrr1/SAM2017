@@ -4,3 +4,4 @@ from sam2017_app.models import User, paper
 admin.site.register(User)
 admin.site.register(paper.Paper)
 
+

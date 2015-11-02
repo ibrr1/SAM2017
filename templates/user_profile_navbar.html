@@ -1,3 +1,6 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -12,20 +15,31 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 {% if user_type == 'Author' %}
-                <li><a href="/user_profile/user_information">Manage Account</a></li>
-                <li><a href="/user_profile/paper_submission/">Paper Submission</a></li>
-                <li><a href="/user_profile/paper_list/">Paper List</a></li>
-                <li><a href="/user_profile/logout">Logout</a></li>
+                <li {% if paper_submission_page %} class="active"{% endif %} ><a href="/user_profile/paper_submission/">Paper Submission</a></li>
+                <li {% if paper_list_page %} class="active"{% endif %} ><a href="/user_profile/paper_list/">Paper List</a></li>
                 {% elif user_type == 'PCC' %}
-                <li><a href="/user_profile/user_information">Manage Account</a></li>
-                <li><a href="/user_profile/paper_list/">Paper List</a></li>
-                <li><a href="/user_profile/logout">Logout</a></li>
+                <li {% if paper_list_page %} class="active"{% endif %} ><a href="/user_profile/paper_list/">Paper List</a></li>
                 {% elif user_type == 'PCM' %}
-                <li><a href="/user_profile/user_information">Manage Account</a></li>
-                <li><a href="/user_profile/paper_list/">Paper List</a></li>
-                <li><a href="/user_profile/logout">Logout</a></li>
+                <li {% if paper_list_page %} class="active"{% endif %} ><a href="/user_profile/paper_list/">Paper List</a></li>
                 {% endif %}
 
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if login_page %}
+                <li><a href="/registration">Register Now</a></li>
+                {% elif registration_page %}
+                <li><a href="/">Have an account, Log in</a></li>
+                {% else %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, {{ user_first_name }} ( {{ user_type  }} ) <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/user_profile/user_information">Manage Account</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/user_profile/logout">Logout</a></li>
+                    </ul>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>
