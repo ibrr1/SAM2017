@@ -51,7 +51,7 @@ Tools
                 <td>{{ instance.submitter }}</td>
 
                 {% elif user_type == 'PCC' %}
-                <td><a href="/papers/2015/10/sam.pdf"> {{ instance.paper }}</a> </td>
+                <td><a href="/user_profile/paper_list/download/{{ instance.paper }}"> {{ instance.paper }}</a> </td>
                 <td>{{ instance.title }}</td>
                 <td>{{ instance.authors_list }}</td>
                 <td>{{ instance.revision_paper }}</td>
