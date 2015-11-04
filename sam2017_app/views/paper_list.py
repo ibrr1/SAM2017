@@ -7,6 +7,8 @@ from sam2017_app.views.session import __is_session_open
 from sam2017_app.views.user_details import __add_general_content_to_context
 from django.contrib import messages
 from django.http import HttpResponse
+from sam2017_app.models import submission
+
 
 def paper_list(request):
     if not __is_session_open(request):
@@ -15,9 +17,9 @@ def paper_list(request):
     user = User.objects.get(email=request.session['user_email'])
 
     if user.type == 'Author':
-        papers = paper.Paper.objects.all().filter(submitter_id__exact=user.id).order_by('-date_created');
+        papers = submission.Submission.objects.all().filter(submitter_id__exact=user.id)
     else:
-        papers = paper.Paper.objects.all().order_by('-date_created');
+        papers = submission.Submission.objects.all()
 
     context = {
         'papers_queryset': papers,

@@ -12,19 +12,6 @@ def user_profile(request):
 
     user = models.User.objects.get(email=request.session['user_email'])
 
-    # get all papers
-    papers = paper.Paper.objects.all();
-
-    if user.type == 'PCC':
-        for submitted_paper in papers:
-            if submitted_paper.is_new_paper == True:
-                submitter_first_name = submitted_paper.submitter.first_name
-                submitter_last_name = submitted_paper.submitter.last_name
-                date = submitted_paper.date_created.strftime("%m/%d/%Y %H:%M")
-                messages.info(request,'New paper has been submitted by: ' + submitter_first_name + ' ' + submitter_last_name + ' at: ' + str(date))
-                submitted_paper.is_new_paper = False
-                submitted_paper.save()
-
     context = {
         'user_type': user.type,
     }

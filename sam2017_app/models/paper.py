@@ -20,12 +20,6 @@ class Paper(models.Model):
         return self.title
 
 
-class Review(models.Model):
-
-    class Meta:
-        app_label = 'sam2017_app'
-
-
 class Report(models.Model):
 
     class Meta:

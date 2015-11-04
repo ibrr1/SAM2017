@@ -1,5 +1,7 @@
 from sam2017_app.models.user_model import User
-from sam2017_app.models.paper import Paper, Report, Review
+from sam2017_app.models.paper import Paper, Report
+from sam2017_app.models.submission import Submission
+from sam2017_app.models.review import Review
 from sam2017_app.models.notification import Notification, Reminder
 
 #   Easily Breaks up the models into a models package. If you are to add a model, make sure

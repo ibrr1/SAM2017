@@ -42,25 +42,25 @@ Papers List
             {% for instance in papers_queryset %}
             <tr>
                 {% if user_type == 'Author' %}
-                <td><a href="/user_profile/paper_list/download/{{ instance.paper }}"> {{ instance.paper }}</a> </td>
-                <td>{{ instance.title }}</td>
-                <td>{{ instance.authors_list }}</td>
-                <td>{{ instance.revision_paper }}</td>
-                <td>{{ instance.paper_format }}</td>
+                <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> {{ instance.paper.paper }}</a> </td>
+                <td>{{ instance.paper.title }}</td>
+                <td>{{ instance.paper.authors_list }}</td>
+                <td>{{ instance.paper.revision_paper }}</td>
+                <td>{{ instance.paper.paper_format }}</td>
                 <td>{{ instance.submitter }}</td>
 
                 {% elif user_type == 'PCC' %}
-                <td><a href="/user_profile/paper_list/download/{{ instance.paper }}"> {{ instance.paper }}</a> </td>
-                <td>{{ instance.title }}</td>
-                <td>{{ instance.authors_list }}</td>
-                <td>{{ instance.revision_paper }}</td>
-                <td>{{ instance.paper_format }}</td>
+                <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> {{ instance.paper.paper }}</a> </td>
+                <td>{{ instance.paper.title }}</td>
+                <td>{{ instance.paper.authors_list }}</td>
+                <td>{{ instance.paper.revision_paper }}</td>
+                <td>{{ instance.paper.paper_format }}</td>
                 <td>{{ instance.submitter }}</td>
                 <td><button class="btn btn-primary btn-sm btn-block">Assign</button> <br></td>
 
                 {% else %}
-                <td>{{ instance.title }}</td>
-                <td>{{ instance.authors_list }}</td>
+                <td>{{ instance.paper.title }}</td>
+                <td>{{ instance.paper.authors_list }}</td>
                 <td><button class="btn btn-primary btn-sm btn-block">Choose</button> <br></td>
                 {% endif %}
 

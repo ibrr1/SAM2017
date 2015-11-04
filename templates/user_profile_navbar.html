@@ -10,7 +10,11 @@
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
              </button>
+             {% if login_page or registration_page %}
+             <a class="navbar-brand" href="/"><span style="color:blue"></span><p1> SAM2017 </p1><soan style="color:blue"></soan></a>
+             {% else %}
              <a class="navbar-brand" href="/user_profile"><span style="color:blue"></span><p1> SAM2017 </p1><soan style="color:blue"></soan></a>
+             {% endif %}
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
