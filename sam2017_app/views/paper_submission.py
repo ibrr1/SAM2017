@@ -1,5 +1,6 @@
 from sam2017_app.models import paper
 from sam2017_app.models.user_model import User
+from sam2017_app.models import submission
 from sam2017_app.forms.paper_form import PaperSubmission
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -47,10 +48,13 @@ def paper_submission(request):
                 submitted_paper.authors_list = paper_submission_form.cleaned_data['authors_list']
                 submitted_paper.author_contact = paper_submission_form.cleaned_data['author_contact']
                 submitted_paper.paper_format = paper_submission_form.cleaned_data['paper_format']
-                submitted_paper.revision_paper = paper_submission_form.cleaned_data['is_this_a_revision_of_a_previously_submitted_paper']
-                submitted_paper.submitter = user
-                submitted_paper.is_new_paper = True
                 submitted_paper.date_created = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                new_submission = submission.Submission()
+                new_submission.paper = submitted_paper
+                new_submission.submitter = user
+
+                new_submission.save()
                 submitted_paper.save()
                 messages.success(request, 'Thanks, You have successfully submitted a paper')
 
