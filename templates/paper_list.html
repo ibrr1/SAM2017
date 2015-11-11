@@ -56,7 +56,7 @@ Papers List
                 <td>{{ instance.paper.revision_paper }}</td>
                 <td>{{ instance.paper.paper_format }}</td>
                 <td>{{ instance.submitter }}</td>
-                <td><button class="btn btn-primary btn-sm btn-block">Assign</button> <br></td>
+                <td><a href="/user_profile/paper_list/assign_pcm/{{ instance.id }}" class="btn btn-primary btn-sm btn-block">Assign</a> <br></td>
 
                 {% else %}
                 <td>{{ instance.paper.title }}</td>

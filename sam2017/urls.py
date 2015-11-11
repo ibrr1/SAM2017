@@ -18,6 +18,8 @@ urlpatterns = [
     url(r'^user_profile/paper_submission/$', 'sam2017_app.views.paper_submission.paper_submission', name='modify_user_info'),
     url(r'^user_profile/paper_list/$', 'sam2017_app.views.paper_list.paper_list', name='modify_user_info'),
     url(r'^user_profile/paper_list/download/(?P<file_name>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.paper_list.download', name='download_file'),
+    url(r'^user_profile/paper_list/assign_pcm/(?P<submission_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.assign_pcm.onAssignPCM', name='assign_pcm'),
+
 
 
 ]

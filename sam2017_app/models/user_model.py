@@ -7,7 +7,7 @@ class User(models.Model):
     AUTHOR = "Author"
     PCM = "PCM"
     PCC = "PCC"
-    ADMIN = "admin"
+    ADMIN = "Admin"
 
     USER_TYPE = ((AUTHOR, "Author"), (PCM, "PCM"), (PCC, "PCC"), (ADMIN, "Admin"))
 

@@ -16,9 +16,6 @@ def manage_account(request):
 
     user = user_model.User.objects.get(email=request.session['user_email'])
 
-    papers = paper.Paper.objects.all();
-
-
     # put all the initial for fields in this dict
     initial_form_data = {'first_name': user.first_name,
                          'last_name': user.last_name,
