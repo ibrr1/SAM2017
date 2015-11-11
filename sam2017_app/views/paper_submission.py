@@ -49,6 +49,8 @@ def paper_submission(request):
                 submitted_paper.author_contact = paper_submission_form.cleaned_data['author_contact']
                 submitted_paper.paper_format = paper_submission_form.cleaned_data['paper_format']
                 submitted_paper.date_created = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                submitted_paper.revision_paper= 1 if paper_submission_form.cleaned_data["is_this_a_revision_of_a_previously_submitted_paper"]=="Yes" else 0
+
                 submitted_paper.save()
                 
                 new_submission = submission.Submission()

@@ -23,6 +23,7 @@ Papers List
                 <td><b>Revision Paper</b></td>
                 <td><b>Format</b></td>
                 <td><b>Submitter</b></td>
+                  <td><b>Updating</b></td>
                 {% elif user_type == 'PCC' %}
                 <td><b>Paper</b></td>
                 <td><b>Title</b></td>
@@ -47,7 +48,7 @@ Papers List
                 <td>{{ instance.paper.authors_list }}</td>
                 <td>
                      {% if instance.paper.revision_paper  %}
-      <b>Yes/b>
+      <b>Yes</b>
                     {% else %}
         <b>no</b>
         {% endif %}
@@ -55,7 +56,7 @@ Papers List
                    </td>
                 <td>{{ instance.paper.paper_format }}</td>
                 <td>{{ instance.submitter }}</td>
-
+                <td><a href="/user_profile/paper_updating/{{instance.paper.id }}" class="btn btn-primary btn-sm btn-block">Update</a> </td>
                 {% elif user_type == 'PCC' %}
                 <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> {{ instance.paper.paper }}</a> </td>
                 <td>{{ instance.paper.title }}</td>
@@ -69,6 +70,7 @@ Papers List
                 <td>{{ instance.paper.title }}</td>
                 <td>{{ instance.paper.authors_list }}</td>
                 <td><button class="btn btn-primary btn-sm btn-block">Choose</button> <br></td>
+
                 {% endif %}
 
             </tr>
