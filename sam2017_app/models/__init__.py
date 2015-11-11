@@ -3,6 +3,7 @@ from sam2017_app.models.paper import Paper, Report
 from sam2017_app.models.submission import Submission
 from sam2017_app.models.review import Review
 from sam2017_app.models.notification import Notification, Reminder
+from sam2017_app.models.submission_choice import SubmissionChoice
 
 #   Easily Breaks up the models into a models package. If you are to add a model, make sure
 #   You do the following:
@@ -18,4 +19,4 @@ from sam2017_app.models.notification import Notification, Reminder
 #   Make sure User is imported first.
 #   Add the name of the class in the __all__ variable
 
-__all__ = ['User', 'Paper', 'Report', 'Review', 'Notification', 'Reminder']
+__all__ = ['User', 'Paper', 'Report', 'Review', 'Notification', 'Reminder','SubmissionChoice']

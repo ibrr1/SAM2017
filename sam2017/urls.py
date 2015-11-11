@@ -21,7 +21,6 @@ urlpatterns = [
     url(r'^user_profile/paper_list/assign_pcm/(?P<submission_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.assign_pcm.onAssignPCM', name='assign_pcm'),
 
 
-
 ]
 
 if settings.DEBUG:
