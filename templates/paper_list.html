@@ -45,7 +45,14 @@ Papers List
                 <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> {{ instance.paper.paper }}</a> </td>
                 <td>{{ instance.paper.title }}</td>
                 <td>{{ instance.paper.authors_list }}</td>
-                <td>{{ instance.paper.revision_paper }}</td>
+                <td>
+                     {% if instance.paper.revision_paper  %}
+      <b>Yes/b>
+                    {% else %}
+        <b>no</b>
+        {% endif %}
+
+                   </td>
                 <td>{{ instance.paper.paper_format }}</td>
                 <td>{{ instance.submitter }}</td>
 
