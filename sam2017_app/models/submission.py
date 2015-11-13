@@ -14,13 +14,8 @@ class Submission(models.Model):
 
     submitter = models.ForeignKey(User, related_name='submitter')
 
-    reviewer1 = models.ForeignKey(User, related_name='reviewer1', null=True, blank=True)
-    reviewer2 = models.ForeignKey(User, related_name='reviewer2', null=True, blank=True)
-    reviewer3 = models.ForeignKey(User, related_name='reviewer3', null=True, blank=True)
-
-    review1 = models.ForeignKey(Review, related_name='review1', null=True, blank=True)
-    review2 = models.ForeignKey(Review, related_name='review2', null=True, blank=True)
-    review3 = models.ForeignKey(Review, related_name='review3', null=True, blank=True)
+    reviewers = models.ManyToManyField(User, null=True, blank=True)
+    reviews = models.ManyToManyField(Review, null=True, blank=True)
 
     class Meta:
         app_label = 'sam2017_app'

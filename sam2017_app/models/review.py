@@ -8,8 +8,6 @@ __author__ = 'Adi'
 class Review(models.Model):
     paper = models.ForeignKey(Paper, null=True)
 
-    reviewer = models.ForeignKey(User, null=True)
-
     description = models.CharField(max_length=100, blank=True)
 
     rating = models.IntegerField(default=0)
