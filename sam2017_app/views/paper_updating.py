@@ -27,7 +27,6 @@ def paper_updating_event(request,paper_id):
   #  paper_submission_form.title=my_paper.title
     context = {
         'paper_submission_form': paper_submission_form,
-        'paper_submission_page': True
     }
 
     context.update(__add_general_content_to_context(user))
@@ -61,12 +60,6 @@ def paper_updating_event(request,paper_id):
             my_paper.revision_paper= 1 if paper_submission_form.cleaned_data["is_this_a_revision_of_a_previously_submitted_paper"]=="Yes" else 0
 
             my_paper.save()
-
-                #new_submission = submission.Submission()
-                #new_submission.paper = submitted_paper
-               # new_submission.submitter = user
-                #new_submission.save()
-
 
 
             messages.success(request, 'Thanks, You have successfully updated a paper')

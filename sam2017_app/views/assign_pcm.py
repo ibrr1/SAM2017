@@ -12,21 +12,36 @@ from django.http import HttpResponse
 from sam2017_app.models import submission
 
 
-
 def onAssignPCM(request, submission_id):
     if not __is_session_open(request):
         return HttpResponseRedirect('/')
     user = User.objects.get(email=request.session['user_email'])
 
-    pcm = User.objects.all().filter(type = User.PCM)
-
-
+    all_pcms = User.objects.all().filter(type=User.PCM)
 
     context = {
-            'pcm_list': pcm,
-        }
-
+        'pcms_list': all_pcms,
+    }
     context.update(__add_general_content_to_context(user))
 
     return render(request, 'assign_pcm_table.html', context)
 
+
+def AssignPaper(request):
+    if not __is_session_open(request):
+        return HttpResponseRedirect('/')
+
+    user = User.objects.get(email=request.session['user_email'])
+
+    context = {
+    }
+    context.update(__add_general_content_to_context(user))
+
+
+
+    context.update(__add_general_content_to_context(user))
+    messages.success(request, 'You have successfully updated your information')
+    return HttpResponseRedirect('/user_profile')
+
+
+    return render(request, 'assign_pcm_table.html', context)

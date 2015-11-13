@@ -17,25 +17,33 @@ Papers List
         <table class="table table-striped">
             <tr class="info">
                 <td><b>PCM Name</b></td>
-                <td><b>Action</b></td>
+                <td><b>Assign</b></td>
             </tr>
-            {% if pcm_list %}
-            {% for instance in pcm_list %}
+            {% if pcms_list %}
+            {% for pcm in pcms_list %}
             <tr>
-                <td>{{ instance.first_name }}</td>
-                <td><button class="btn btn-primary btn-sm btn-block">Choose</button> <br></td>
-
+                <td>{{ pcm.first_name }} {{ pcm.last_name }}</td>
+                <td>
+                    <input type="checkbox"></td>
             </tr>
             {% endfor %}
         </table>
+        <div class="panel-footer">
+            <a href="/user_profile/assign/" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> Assign
+            </a>
+
+            <a href="/user_profile">Cancel</a>
+
+
+        </div>
+
         <tr>
+            {% else %}
             <td>
-                <h4>No  PCMs...</h4>
+                <h4>No PCMs available in the system</h4>
             </td>
         </tr>
         {% endif %}
-
-
 
     </div>
 </div>
