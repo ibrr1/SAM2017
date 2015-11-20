@@ -13,8 +13,6 @@ class Submission(models.Model):
     rating = models.IntegerField(default=0)
 
     submitter = models.ForeignKey(User, related_name='submitter')
-
-    reviewers = models.ManyToManyField(User, null=True, blank=True)
     reviews = models.ManyToManyField(Review, null=True, blank=True)
 
     class Meta:
