@@ -1,0 +1,58 @@
+{% extends "master_page.html" %}
+
+{% block title %}
+Paper List
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+{% include 'user_profile_navbar.html' %}
+
+
+<div class="container">
+    <div class="row" style="padding:10px">
+        <span style="color:red;">{{ error }}</span>
+
+        <table class="table table-striped">
+            <tr class="info">
+                <td><b>Paper</b></td>
+                <td><b>Title</b></td>
+                <td><b>Authors</b></td>
+                <td><b>Revision Paper</b></td>
+                <td><b>Format</b></td>
+                <td><b>Submitter</b></td>
+                <td><b>Action</b></td>
+            </tr>
+
+            {% if papers_queryset %}
+            {% for instance in papers_queryset %}
+            <tr>
+                <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> {{ instance.paper.paper }}</a> </td>
+                <td>{{ instance.paper.title }}</td>
+                <td>{{ instance.paper.authors_list }}</td>
+                <td>
+                {% if instance.paper.revision_paper  %}
+                 <p>Yes</p>
+                    {% else %}
+                 <p>no</p>
+                {% endif %}
+
+                </td>
+                <td>{{ instance.paper.paper_format }}</td>
+                <td>{{ instance.submitter }}</td>
+                <td><a href="/user_profile/review_list/{{instance.id}}" class="btn btn-primary btn-sm btn-block">Review</a> </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <tr>
+            <td>
+                <h4>No paper to list...</h4>
+            </td>
+        </tr>
+        {% endif %}
+
+
+    </div>
+</div>
+{% endblock %}
