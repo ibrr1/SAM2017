@@ -18,6 +18,13 @@ class User(models.Model):
     type = models.CharField(max_length=10, choices=USER_TYPE, default=AUTHOR)
     admin = models.BooleanField(default=False)
 
+    @classmethod
+    def create(cls, first_name, last_name, email, password):
+        user = cls(first_name=first_name, last_name=last_name, email=email,
+                   password=password)
+
+        return user
+
     class Meta:
         app_label = 'sam2017_app'
 
