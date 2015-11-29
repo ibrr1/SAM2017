@@ -11,6 +11,14 @@ from django.contrib import messages
 
 
 def paper_updating_event(request,paper_id):
+
+       ## check if  the submition date is passed so he cannot  publish one
+    last_month =  datetime.datetime.now() - datetime.timedelta(days=1)
+    PaperDeadLine =paper.PaperDeadLine.objects.filter(date_deadline__gte=last_month)
+    if  not PaperDeadLine  :
+         return render(request, 'paper_dead_line.html')
+#****************
+
     if not __is_session_open(request):
         return HttpResponseRedirect('/')
 

@@ -26,3 +26,10 @@ class Report(models.Model):
         app_label = 'sam2017_app'
 
 
+class PaperDeadLine(models.Model):
+
+    date_deadline = models.DateTimeField(default=datetime.datetime.now())
+    def __str__(self):
+        return "dead line"
+
+
