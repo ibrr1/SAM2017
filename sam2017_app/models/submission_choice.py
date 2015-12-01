@@ -9,6 +9,5 @@ from sam2017_app.models.submission import Submission
 class SubmissionChoice(models.Model):
     chooser = models.ForeignKey(User)
     choice = models.ForeignKey(Submission)
-    
     class Meta:
-        app_label = 'sam2017'
+        app_label = 'sam2017_app'

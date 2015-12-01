@@ -40,7 +40,8 @@ Paper List
 
             </tr>
             {% if papers_queryset %}
-            {% for instance in papers_queryset %}
+            {% for instance1 in pairs %}
+                {%  with instance=instance1.0 %}
             <tr>
                 {% if user_type == 'Author' %}
                 <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> {{ instance.paper.paper }}</a> </td>
@@ -69,11 +70,13 @@ Paper List
                 {% else %}
                 <td>{{ instance.paper.title }}</td>
                 <td>{{ instance.paper.authors_list }}</td>
-                <td><button class="btn btn-primary btn-sm btn-block">Choose</button> <br></td>
+                <td><a href="/user_profile/paper_list/choose/{{instance.id}}" class="{% if instance1.1 == True %} disabled {% endif %}btn btn-primary"><span class="glyphicon glyphicon-check"></span> Choose
+            </a></td>
 
                 {% endif %}
 
             </tr>
+                {% endwith %}
             {% endfor %}
         </table>
         {% else %}
