@@ -20,17 +20,18 @@ Papers List
                 <td><b>Assign</b></td>
             </tr>
             {% if pcms_list %}
-            {% for pcm in pcms_list %}
-            <tr>
-                <td>{{ pcm.first_name }} {{ pcm.last_name }}</td>
+            {% for pcm in pcm_pairs %}
+            {% if pcm.2 == False %}
+                <tr>
+                <td>{{ pcm.0.first_name }} {{ pcm.0.last_name }}</td>
                 <td>
-                    <input type="checkbox"></td>
+                    <a href="/user_profile/paper_list/assign_pcm/{{pcm.0.id}}/{{ submission_id }}" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> Assign
+            </a>
             </tr>
+                {% endif %}
             {% endfor %}
         </table>
         <div class="panel-footer">
-            <a href="/user_profile/assign/" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> Assign
-            </a>
 
             <a href="/user_profile">Cancel</a>
 
