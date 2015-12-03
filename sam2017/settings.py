@@ -95,8 +95,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 STATICFILES_DIRS = [
-    os.path.join(os.path.dirname(BASE_DIR), 'SAM2017/static')
+    os.path.join(os.path.dirname(BASE_DIR), 'static')
 ]
+
+
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
