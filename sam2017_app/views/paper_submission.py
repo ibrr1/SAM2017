@@ -16,9 +16,7 @@ def paper_submission(request):
        ## check if  the submition date is passed so he cannot  publish one
     last_month =  datetime.datetime.now() - datetime.timedelta(days=1)
     PaperDeadLine =paper.PaperDeadLine.objects.filter(date_deadline__gte=last_month)
-    if  not PaperDeadLine  :
-         return render(request, 'paper_dead_line.html')
-#****************
+
     if not __is_session_open(request):
         return HttpResponseRedirect('/')
 
@@ -32,6 +30,9 @@ def paper_submission(request):
     }
 
     context.update(__add_general_content_to_context(user))
+
+    if not PaperDeadLine:
+         return render(request, 'paper_dead_line.html', context)
 
     if request.method == "POST":
 
