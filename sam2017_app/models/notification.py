@@ -23,8 +23,9 @@ class Reminder(models.Model):
         app_label = 'sam2017_app'
 
     reminder_type = models.CharField(max_length=127, default="")
-    reminder_date = models.DateField(default=None)
+    reminder_date = models.DateTimeField(default=None)
     recipients = models.ManyToManyField(User, default=None)
+    notification = models.OneToOneField(Notification, default=None)
 
     @classmethod
     def create(cls, reminder_type, reminder_date, recipients, notification):

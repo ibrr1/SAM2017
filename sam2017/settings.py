@@ -28,6 +28,9 @@ INSTALLED_APPS = (
 
     # user-defined
     'sam2017_app',
+
+    'djcelery',
+    'kombu.transport.django'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,7 +101,8 @@ STATICFILES_DIRS = [
     os.path.join(os.path.dirname(BASE_DIR), 'static')
 ]
 
-
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_in_env', 'media_root')
+BROKER_URL = 'django://'
+CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+CELERY_ENABLE_UTC = False
+CELERY_TIMEZONE = 'America/New_York'
