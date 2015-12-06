@@ -29,6 +29,12 @@ urlpatterns = [
 
     url(r'^user_profile/pcms_chosen_paper/$', 'sam2017_app.views.pcms_chosen_paper.pcms_chosen_paper', name='pcm_chosen_paper'),
 
+    #pcc rating
+    url(r'^user_profile/pcc_rating/$', 'sam2017_app.views.pcc_rating.pcc_rating', name='pcc_rate'),
+    url(r'^user_profile/pcc_rating/(?P<paper_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.pcc_rating.view_rating', name='view_rating'),
+
+
+
 
     #url(r'^user_profile/assign/$', 'sam2017_app.views.assign_pcm.AssignPaper', name='paper_updating'),
 

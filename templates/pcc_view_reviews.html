@@ -1,0 +1,74 @@
+{% extends "master_page.html" %}
+
+{% block title %}
+Paper List
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+{% include 'user_profile_navbar.html' %}
+
+
+<div class="container">
+    <div class="row" style="padding:10px">
+        <span style="color:red;">{{ error }}</span>
+
+
+        <table class="table table-striped">
+            <tr class="info">
+                <td><b>PCM name</b></td>
+                <td><b>Review Description</b></td>
+                <td><b>Rate</b></td>
+            </tr>
+
+            {% if review %}
+            {% for instance in review %}
+                <td>{{ instance.reviewer.first_name}}</td>
+                 <td>{{ instance.description}}</td>
+                <td>{{ instance.rating}}</td>
+            </tr>
+             {% endfor %}
+
+
+        </table>
+       <div class="row">
+        <div class="left-block" style="width:500px;">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Rate Paper</h4></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form  enctype="multipart/form-data" action="" method="POST">
+                                {% csrf_token %}
+                                {{ pcc_rate_form.as_p }}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="btn  btn-primary"><span class="glyphicon glyphicon-check"></span>Submit</button>
+
+                    <a href="/user_profile">Cancel</a>
+                            </form>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        {% else %}
+        <tr>
+            <td>
+                <h4>No paper to list...</h4>
+            </td>
+        </tr>
+        {% endif %}
+
+
+    </div>
+</div>
+{% endblock %}
