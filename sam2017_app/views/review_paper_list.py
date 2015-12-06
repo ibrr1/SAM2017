@@ -21,13 +21,13 @@ def review_paper_list(request):
 
     reviews = review.Review.objects.filter(reviewer=user.id)
 
-    papers = submission.Submission.objects.all()
+    # papers = submission.Submission.objects.all()
 
     print(user.id)
     print(reviews)
 
     context = {
-        'papers_queryset': papers,
+        'papers_queryset': reviews,
         'user_type': user.type,
         'review_paper_list_page': True
     }

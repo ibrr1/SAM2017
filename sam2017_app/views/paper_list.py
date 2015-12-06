@@ -53,6 +53,7 @@ def chooseSubmission(request,submission_id):
     else:
         choice = SubmissionChoice()
         choice.chooser = user
-        choice.choice = Submission.objects.get(id=int(submission_id))
+        submission = Submission.objects.get(id= submission_id)
+        choice.choice = submission
         choice.save()
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/user_profile/paper_list/')

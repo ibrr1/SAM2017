@@ -11,3 +11,6 @@ class SubmissionChoice(models.Model):
     choice = models.ForeignKey(Submission)
     class Meta:
         app_label = 'sam2017_app'
+
+    def __str__(self):
+        return self.chooser.email

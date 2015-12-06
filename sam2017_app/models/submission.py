@@ -13,7 +13,7 @@ class Submission(models.Model):
     rating = models.IntegerField(default=0)
 
     submitter = models.ForeignKey(User, related_name='submitter')
-    reviews = models.ManyToManyField(Review, null=True, blank=True)
+    reviews = models.ManyToManyField(Review, blank=True)
 
     class Meta:
         app_label = 'sam2017_app'

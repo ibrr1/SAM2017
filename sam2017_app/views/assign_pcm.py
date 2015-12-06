@@ -9,23 +9,18 @@ from sam2017_app.views.session import __is_session_open
 from sam2017_app.views.user_details import __add_general_content_to_context
 from django.contrib import messages
 from django.http import HttpResponse
-from sam2017_app.models.submission import Submission
-from sam2017_app.models.review import Review
+from sam2017_app.models import submission
+from sam2017_app.models.review import Review, Paper
 from sam2017_app.models.submission_choice import SubmissionChoice
 
 def onAssignPCM(request, submission_id):
     if not __is_session_open(request):
         return HttpResponseRedirect('/')
     user = User.objects.get(email=request.session['user_email'])
-    subm = Submission.objects.get(id=int(submission_id))
-    all_pcms = User.objects.all().filter(type=User.PCM)
-    pcmpairs = []
-    for pcm in all_pcms:
-        pcmpairs.append((pcm,SubmissionChoice.objects.filter(chooser=pcm,choice=subm).exists(),Review.objects.filter(id=int(submission_id),reviewer=pcm).exists()))
+    all_pcms = User.objects.all().filter(type='PCM')
     context = {
         'pcms_list': all_pcms,
-        'submission_id': submission_id,
-        'pcm_pairs': pcmpairs,
+        'paper_id': submission_id,
     }
     context.update(__add_general_content_to_context(user))
 
@@ -42,16 +37,20 @@ def AssignPaper(request,submission_id,pcm_id):
     }
     context.update(__add_general_content_to_context(user))
 
+    rev = Review()
 
+    pcm = User.objects.get(id = pcm_id)
 
-    context.update(__add_general_content_to_context(user))
-    messages.success(request, 'You have successfully updated your information')
-    subm = Submission.Submission.objects.get(id = submission_id)
-    use = User.objects.get(id = pcm_id)
-    rev = Review.Review()
-    rev.paper=subm[0]
-    rev.reviewer = use[0]
+    current_submission = submission.Submission.objects.get(id=submission_id)
 
+    paper = getattr(current_submission, 'paper')
+
+    rev.reviewer = pcm
+    rev.paper = paper
     rev.save()
+
+    current_submission.reviews.add(rev)
+    current_submission.save()
+
     return HttpResponseRedirect('/user_profile')
 

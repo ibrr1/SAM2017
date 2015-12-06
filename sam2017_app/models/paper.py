@@ -5,7 +5,7 @@ import datetime
 
 class Paper(models.Model):
 
-    paper = models.FileField(upload_to='submitted_paper')
+    paper = models.FileField(upload_to='submitted_papers')
     title = models.CharField(max_length=30, blank=False)
     authors_list = models.CharField(max_length=30, blank=False)
     author_contact = models.CharField(max_length=30, blank=False)
@@ -29,6 +29,7 @@ class Report(models.Model):
 class PaperDeadLine(models.Model):
 
     date_deadline = models.DateTimeField(default=datetime.datetime.now())
+
     def __str__(self):
         return "dead line"
 

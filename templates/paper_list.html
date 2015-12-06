@@ -49,7 +49,7 @@ Paper List
                      {% if instance.paper.revision_paper  %}
       <p>Yes</p>
                     {% else %}
-        <p>no</p>
+        <p>No</p>
 
         {% endif %}
 
@@ -81,11 +81,13 @@ Paper List
                 <td>{{ instance.paper.authors_list }}</td>
                 <td><a href="/user_profile/paper_list/choose/{{instance.id}}" class="{% if instance1.1 == True %} disabled {% endif %}btn btn-primary"><span class="glyphicon glyphicon-check"></span> Choose
             </a></td>
+
                 {% endwith %}
+            </tr>
             {% endfor %}
                 {% endif %}
 
-            </tr>
+
 
 
         </table>

@@ -1,0 +1,43 @@
+{% extends "master_page.html" %}
+
+{% block title %}
+Paper List
+{{ block.super }}
+{% endblock %}
+
+{% block content %}
+{% include 'user_profile_navbar.html' %}
+
+
+<div class="container">
+    <div class="row" style="padding:10px">
+        <span style="color:red;">{{ error }}</span>
+
+
+        <table class="table table-striped">
+            <tr class="info">
+                <td><b>PCM Name</b></td>
+                <td><b>Chosen Paper</b></td>
+            </tr>
+
+            {% if ChosenPaper %}
+            {% for instance in ChosenPaper %}
+                <td> {{ instance.chooser}}</td>
+                <td> {{ instance.choice.paper.paper}}</td>
+            </tr>
+             {% endfor %}
+
+
+        </table>
+        {% else %}
+        <tr>
+            <td>
+                <h4>No paper to list...</h4>
+            </td>
+        </tr>
+        {% endif %}
+
+
+    </div>
+</div>
+{% endblock %}

@@ -18,3 +18,9 @@ class Review(models.Model):
 
     class Meta:
         app_label = 'sam2017_app'
+
+
+class ReviewDeadline(models.Model):
+    review_deadline = models.DateTimeField(default=datetime.datetime.now())
+    def __str__(self):
+        return "review dead line"

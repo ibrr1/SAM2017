@@ -20,11 +20,15 @@ urlpatterns = [
     url(r'^user_profile/user_information/$', 'sam2017_app.views.update_user_info.manage_account', name='modify_user_info'),
     url(r'^user_profile/paper_submission/$', 'sam2017_app.views.paper_submission.paper_submission', name='modify_user_info'),
     url(r'^user_profile/paper_list/$', 'sam2017_app.views.paper_list.paper_list', name='modify_user_info'),
-    url(r'^user_profile/paper_list/download/(?P<file_name>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.paper_list.download', name='download_file'),
+    url(r'^user_profile/paper_list/download/(?P<file_name>[a-zA-Z-0-9-. -_/]+)/$', 'sam2017_app.views.paper_list.download', name='download_file'),
     url(r'^user_profile/paper_list/assign_pcm/(?P<submission_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.assign_pcm.onAssignPCM', name='assign_pcm'),
-    url(r'^user_profile/paper_list/assign_pcm/(?P<submission_id>[a-zA-Z-0-9-.-_/]+)/(?P<pcm_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.assign_pcm.AssignPaper', name='assign_paper'),
+    url(r'^user_profile/assign_paper/(?P<submission_id>[a-zA-Z-0-9-.-_/]+)/(?P<pcm_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.assign_pcm.AssignPaper', name='assign_paper'),
     url(r'^user_profile/paper_updating/(?P<paper_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.paper_updating.paper_updating_event', name='paper_updating'),
     url(r'^user_profile/paper_list/choose/(?P<submission_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.paper_list.chooseSubmission', name='choose_submission'),
+
+
+    url(r'^user_profile/pcms_chosen_paper/$', 'sam2017_app.views.pcms_chosen_paper.pcms_chosen_paper', name='pcm_chosen_paper'),
+
 
     #url(r'^user_profile/assign/$', 'sam2017_app.views.assign_pcm.AssignPaper', name='paper_updating'),
 

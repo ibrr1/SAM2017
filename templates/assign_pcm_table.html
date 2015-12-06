@@ -20,15 +20,13 @@ Papers List
                 <td><b>Assign</b></td>
             </tr>
             {% if pcms_list %}
-            {% for pcm in pcm_pairs %}
-            {% if pcm.2 == False %}
+            {% for pcm in pcms_list %}
                 <tr>
-                <td>{{ pcm.0.first_name }} {{ pcm.0.last_name }}</td>
+                <td>{{ pcm.first_name }} {{ pcm.last_name }}</td>
                 <td>
-                    <a href="/user_profile/paper_list/assign_pcm/{{pcm.0.id}}/{{ submission_id }}" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> Assign
-            </a>
+                    <a href="/user_profile/assign_paper/{{ paper_id }}/{{ pcm.id }}" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> Assign
+            </a> </td>
             </tr>
-                {% endif %}
             {% endfor %}
         </table>
         <div class="panel-footer">
