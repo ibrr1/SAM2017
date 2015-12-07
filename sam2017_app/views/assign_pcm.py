@@ -18,8 +18,15 @@ def onAssignPCM(request, submission_id):
         return HttpResponseRedirect('/')
     user = User.objects.get(email=request.session['user_email'])
     all_pcms = User.objects.all().filter(type='PCM')
+    paper = submission.Submission.objects.get(id=int(submission_id)).paper
+    pcmSets =[]
+    for pcm in all_pcms:
+        assigned = Review.objects.filter(paper=paper,reviewer=pcm).exists()
+        if(assigned == False):
+            chosen = SubmissionChoice.objects.filter(chooser=pcm, choice=submission.Submission.objects.filter(id=int(submission_id))).exists()
+            pcmSets.append((pcm,chosen))
     context = {
-        'pcms_list': all_pcms,
+        'pcms_list': pcmSets,
         'paper_id': submission_id,
     }
     context.update(__add_general_content_to_context(user))
