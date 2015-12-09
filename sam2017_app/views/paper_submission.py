@@ -70,9 +70,10 @@ def paper_submission(request):
                 new_submission.save()
 
                 try:
+                    print("Sending Notification to PCC")
                     pcc = User.objects.get(type=User.PCC)
                     nm = NotificationManager.create()
-                    nm.send_notification(recipients=[pcc], message="{0} has submitted a paper with the title {1}".format(user.full_name, submitted_paper.title))
+                    nm.send_notification(recipients=[pcc], message="{0} has submitted a paper with the title \"{1}\"".format(user.full_name, submitted_paper.title))
                 except:
                     print("Something went wrong when adding the task")
 

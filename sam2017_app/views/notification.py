@@ -40,7 +40,7 @@ class NotificationManager:
         for recipient in recipients:
             reminder.recipients.add(recipient)
 
-    def send_notification(self, recipients, notification_type, message):
+    def send_notification(self, recipients, message, notification_type="Notification"):
         # create a notification
         notification = self.__create_notification(notification_type, message)
 

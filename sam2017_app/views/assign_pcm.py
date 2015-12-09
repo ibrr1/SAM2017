@@ -64,7 +64,7 @@ def assign_paper(request, submission_id, pcm_id):
 
     try:
         nm = NotificationManager.create()
-        nm.send_notification(recipients=[pcm], message="You have been assigned the paper {0} for review".format(paper.title))
+        nm.send_notification(recipients=[pcm], message="You have been assigned the paper \"{0}\" for review".format(paper.title))
     except:
         print("Something went wrong with adding a notification about paper assignment")
 

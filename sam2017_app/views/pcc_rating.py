@@ -54,7 +54,7 @@ def view_rating(request, paper_id):
 
         try:
             nm = NotificationManager.create()
-            nm.send_notification(recipients=[current_submission.submitter], message="Your submission for the paper: {0}, has been given the rating: {1}".format(current_submission.paper.title, current_submission.rating))
+            nm.send_notification(recipients=[current_submission.submitter], message="Your submission for the paper \"{0}\", has been given the rating: {1}".format(current_submission.paper.title, current_submission.rating))
         except:
             print("There was a problem sending the notification for a rated paper")
 
