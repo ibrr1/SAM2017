@@ -6,6 +6,9 @@ class NotificationManager:
 
     __slots__ = 'reminders'
 
+    def __init__(self):
+        pass
+
     @classmethod
     def create(cls):
         # get reminders from the database that are current
