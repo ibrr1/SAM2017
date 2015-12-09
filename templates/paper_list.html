@@ -62,7 +62,7 @@ Paper List
                         {% elif user_type == 'PCC' %}
                     <tr>
                     {% for instance in papers_queryset %}
-                <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> {{ instance.paper.paper }}</a> </td>
+                <td><a href="/user_profile/paper_list/download/{{ instance.paper.paper }}"> Download </a> </td>
                 <td>{{ instance.paper.title }}</td>
                 <td>{{ instance.paper.authors_list }}</td>
                 <td>{{ instance.paper.revision_paper }}</td>

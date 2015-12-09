@@ -59,5 +59,5 @@ def AssignPaper(request,submission_id,pcm_id):
     current_submission.reviews.add(rev)
     current_submission.save()
 
-    return HttpResponseRedirect('/user_profile')
+    return HttpResponseRedirect('../')
 
