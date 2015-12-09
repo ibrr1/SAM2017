@@ -32,6 +32,11 @@ urlpatterns = [
     #pcc rating
     url(r'^user_profile/pcc_rating/$', 'sam2017_app.views.pcc_rating.pcc_rating', name='pcc_rate'),
     url(r'^user_profile/pcc_rating/(?P<paper_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.pcc_rating.view_rating', name='view_rating'),
+    #Generate Report
+    url(r'^user_profile/pcc_generate_report/$', 'sam2017_app.views.pcc_generate_report.pcc_generate_report', name='pcc_generate_report'),
+    url(r'^user_profile/pcc_generate_report/(?P<paper_id>[a-zA-Z-0-9-.-_/]+)/$', 'sam2017_app.views.pcc_generate_report.view_report', name='view_rating'),
+
+
 
 
 

@@ -15,7 +15,7 @@ from sam2017_app.models.review import Review
 from sam2017_app.forms.pcc_rate_form import PCC_Rate
 
 
-def pcc_rating(request):
+def pcc_generate_report(request):
     if not __is_session_open(request):
         return HttpResponseRedirect('/')
 
@@ -26,17 +26,17 @@ def pcc_rating(request):
 
     context = {
         'all_submission': all_Submission,
-        'rate_paper_page': True,
+        'generate_report_page': True,
 
     }
 
     context.update(__add_general_content_to_context(user))
 
-    return render(request, 'pcc_rate_paper.html', context)
+    return render(request, 'pcc_genrate_report.html', context)
 
 
 
-def view_rating(request, paper_id):
+def view_report(request, paper_id):
     if not __is_session_open(request):
         return HttpResponseRedirect('/')
 
@@ -48,8 +48,8 @@ def view_rating(request, paper_id):
 
     context = {
         'pcc_rate_form': pcc_form,
-        'rate_paper_page': True,
-        'review':curent_reviews
+        'review':curent_reviews,
+        'generate_report_page': True,
     }
 
     if pcc_form.is_valid():
@@ -64,6 +64,6 @@ def view_rating(request, paper_id):
 
     context.update(__add_general_content_to_context(user))
 
-    return render(request, 'pcc_view_reviews.html', context)
+    return render(request, 'pcc_view_generate_report.html', context)
 
 

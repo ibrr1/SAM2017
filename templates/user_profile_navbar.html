@@ -25,6 +25,7 @@
                 <li {% if paper_list_page %} class="active"{% endif %} ><a href="/user_profile/paper_list/">Papers List</a></li>
                 <li {% if pcm_chosen_paper_page %} class="active"{% endif %} ><a href="/user_profile/pcms_chosen_paper/">PCMs Chosen Paper</a></li>
                 <li {% if rate_paper_page %} class="active"{% endif %} ><a href="/user_profile/pcc_rating/">Rate Paper</a></li>
+                <li {% if generate_report_page %} class="active"{% endif %} ><a href="/user_profile/pcc_generate_report/">Generate Report</a></li>
                 {% elif user_type == 'PCM' %}
                 <li {% if paper_list_page %} class="active"{% endif %} ><a href="/user_profile/paper_list/">Choose Papers</a></li>
                 <li{% if review_paper_list_page %} class="active"{% endif %} ><a href="/user_profile/review_list/">Review Papers</a></li>
