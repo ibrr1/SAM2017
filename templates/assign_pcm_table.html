@@ -25,7 +25,7 @@ Papers List
                 <tr>
                 <td>{%if pcm1.1 %}{{ pcm.first_name }} {{ pcm.last_name }} <span style="font-weight: bold;">(Requested Assignment)</span>{%else%}{{ pcm.first_name }} {{ pcm.last_name }}{%endif%}</td>
                 <td>
-                    <a href="/user_profile/assign_paper/{{ paper_id }}/{{ pcm.id }}" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> Assign
+                    <a href="/user_profile/paper_list/assign_pcm/{{ paper_id }}/{{ pcm.id }}" class="btn btn-primary"><span class="glyphicon glyphicon-check"></span> Assign
             </a> </td>
             </tr>
             {% endwith%}
