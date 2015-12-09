@@ -19,4 +19,4 @@ from sam2017_app.models.submission_choice import SubmissionChoice
 #   Make sure User is imported first.
 #   Add the name of the class in the __all__ variable
 
-__all__ = ['User', 'Paper', 'Report', 'Review', 'Notification', 'Reminder','SubmissionChoice']
+__all__ = ['User', 'Paper', 'Report', 'Review', 'Notification', 'Reminder', 'SubmissionChoice']
