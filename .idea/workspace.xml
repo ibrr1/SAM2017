@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78f31493-f0cc-4c6b-ba74-fbd4ac567364" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sam2017_app/views/pcc_generate_report.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/pcc_genrate_report.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/pcc_view_generate_report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/pcc_rate_paper.html" afterPath="$PROJECT_DIR$/templates/pcc_rate_paper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sam2017_app/views/pcc_rating.py" afterPath="$PROJECT_DIR$/sam2017_app/views/pcc_rating.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/pcc_view_rate_paper.html" afterPath="$PROJECT_DIR$/templates/pcc_view_rate_paper.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/pcc_view_reviews.html" afterPath="$PROJECT_DIR$/templates/pcc_view_reviews.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sam2017/urls.py" afterPath="$PROJECT_DIR$/sam2017/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user_profile_navbar.html" afterPath="$PROJECT_DIR$/templates/user_profile_navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/submitted_papers/ALDOSARI_12_7_2015_18_6_16_Group 1 - Group1_R1_Doc.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/submitted_papers/ALDOSARI_12_8_2015_17_54_58_Group 1 - Group1_R1_Doc.pdf" />
     </list>
     <ignored path="SAM2017.iws" />
     <ignored path=".idea/workspace.xml" />
