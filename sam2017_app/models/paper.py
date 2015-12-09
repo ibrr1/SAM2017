@@ -30,7 +30,9 @@ class PaperDeadLine(models.Model):
 
     date_deadline = models.DateTimeField(default=datetime.datetime.now())
 
+    class Meta:
+        app_label = 'sam2017_app'
+
     def __str__(self):
         return "dead line"
-
 
